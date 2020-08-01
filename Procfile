@@ -1,0 +1,1 @@
+web: gunicorn full_throttle_lab_assignment.wsgi
