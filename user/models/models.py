@@ -7,7 +7,7 @@ class User(models.Model):
     real_name = models.CharField(
         max_length=150)
     time_zone = models.CharField(
-        max_length=100)
+        max_length=200)
 
 
 class UserActivityPeriod(models.Model):

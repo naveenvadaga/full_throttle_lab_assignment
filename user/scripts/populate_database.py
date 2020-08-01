@@ -35,16 +35,14 @@ def populate_user_activity_period_model(
 
     for each_user in user_data:
         for each_period in each_user[
-            'activity_periods']:
+                'activity_periods']:
             user_activity_period_objs.append(
                 user_activity_period_model(
                     user_id=each_user['id'],
                     start_time=convert_str_to_datetime(
-                        each_period['start_time'],
-                        each_user['tz']),
+                        each_period['start_time']),
                     end_time=convert_str_to_datetime(
-                        each_period['end_time'],
-                        each_user['tz'])
+                        each_period['end_time'])
                 )
             )
 
@@ -53,19 +51,28 @@ def populate_user_activity_period_model(
 
 
 def convert_str_to_datetime(
+        date_time_str):
+    from datetime import datetime
+
+    from user.constants.constants import DATE_TIME_FORMAT
+    return datetime.strptime(
+        date_time_str, DATE_TIME_FORMAT)
+
+
+def convert_str_to_datetime_based_on_timezone(
         date_time_str, time_zone):
     from datetime import datetime
     import pytz
     from django.utils.timezone import make_aware
-    date_time_format = "%b %d %Y %I:%M%p"
+
+    from user.constants.constants import DATE_TIME_FORMAT
     return make_aware(datetime.strptime(
-        date_time_str, date_time_format),
+        date_time_str, DATE_TIME_FORMAT),
         timezone=pytz.timezone(time_zone))
 
 
 def get_json_data(file_path):
     import json
-    json_data = None
     with open(file_path) as file:
         json_data = json.load(file)
 
