@@ -71,7 +71,7 @@ def convert_str_to_datetime_based_on_timezone(
         timezone=pytz.timezone(time_zone))
 
 
-def get_json_data(file_path):
+def get_json_data(file_path="./Test JSON.json"):
     import json
     with open(file_path) as file:
         json_data = json.load(file)
