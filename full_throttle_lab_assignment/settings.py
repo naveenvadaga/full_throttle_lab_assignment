@@ -77,11 +77,14 @@ WSGI_APPLICATION = 'full_throttle_lab_assignment.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dd8ie4qodhfp3g',
+        'HOST': 'ec2-54-197-254-117.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'zzkrhaexecptdg',
+        'PASSWORD': 'a6277ff40307d2091b3ee9b3c1977ad4905980eeefcb1f45ddd0f8047cc74c42'
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
