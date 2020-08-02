@@ -16,8 +16,8 @@ heroku deployed url: https://ftlassignment.herokuapp.com/users/
   from test_json.json file
 * `/users/` endpoints returns a responses that contains
   all the users information
-* test module contains test cases for the view, interactor,
-  model, controller
+* test module contains test cases for the views, interactors,
+  storages, presenters
 
 ## Running locally
 * create a virtual environment
